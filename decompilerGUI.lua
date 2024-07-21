@@ -11,13 +11,15 @@ local Decompile = Instance.new("TextButton")
 local SearchLP = Instance.new("TextButton")
 local SearchSP = Instance.new("TextButton")
 local SearchGM = Instance.new("TextButton")
+local Clear = Instance.new("TextButton")
 local Scripts = Instance.new("ScrollingFrame")
 local UIPadding = Instance.new("UIPadding")
 local UIListLayout = Instance.new("UIListLayout")
 local Title = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
+local X = Instance.new("TextButton")
 local Completed = Instance.new("Frame")
 local CompletedText = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
 local XYZ = Instance.new("Configuration")
 local LocalScript = Instance.new("Frame")
 local ScriptName = Instance.new("TextLabel")
@@ -111,6 +113,20 @@ SearchGM.TextScaled = true
 SearchGM.TextSize = 14.000
 SearchGM.TextWrapped = true
 
+Clear.Name = "Clear"
+Clear.Parent = List
+Clear.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 0
+Clear.Position = UDim2.new(0.107142948, 0, 0.659217894, 0)
+Clear.Size = UDim2.new(0, 77, 0, 22)
+Clear.Font = Enum.Font.ArialBold
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clear.TextScaled = true
+Clear.TextSize = 14.000
+Clear.TextWrapped = true
+
 Scripts.Name = "Scripts"
 Scripts.Parent = Bottom
 Scripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -145,19 +161,19 @@ Title.TextSize = 14.000
 Title.TextWrapped = true
 Title.TextXAlignment = Enum.TextXAlignment.Left
 
-TextButton.Name = "-"
-TextButton.Parent = Top
-TextButton.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.914893627, 0, 0.166666672, 0)
-TextButton.Size = UDim2.new(0, 14, 0, 15)
-TextButton.Font = Enum.Font.Unknown
-TextButton.Text = "-"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
+X.Name = "X"
+X.Parent = Top
+X.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+X.BorderColor3 = Color3.fromRGB(0, 0, 0)
+X.BorderSizePixel = 0
+X.Position = UDim2.new(0.914893627, 0, 0.166666672, 0)
+X.Size = UDim2.new(0, 14, 0, 15)
+X.Font = Enum.Font.Unknown
+X.Text = "X"
+X.TextColor3 = Color3.fromRGB(255, 255, 255)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
 
 Completed.Name = "Completed"
 Completed.Parent = Top
@@ -183,6 +199,20 @@ CompletedText.TextScaled = true
 CompletedText.TextSize = 14.000
 CompletedText.TextTransparency = 1.000
 CompletedText.TextWrapped = true
+
+TextButton.Name = "-"
+TextButton.Parent = Top
+TextButton.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.8255319, 0, 0.166666672, 0)
+TextButton.Size = UDim2.new(0, 14, 0, 15)
+TextButton.Font = Enum.Font.Unknown
+TextButton.Text = "-"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
 
 XYZ.Name = "XYZ"
 XYZ.Parent = ScreenGui
@@ -221,7 +251,7 @@ Icon.Image = "rbxassetid://2254538713"
 
 -- Scripts:
 
-local function NIIOZL_fake_script() -- Top.Dragify 
+local function TQKBL_fake_script() -- Top.Dragify 
 	local script = Instance.new('LocalScript', Top)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -264,8 +294,8 @@ local function NIIOZL_fake_script() -- Top.Dragify
 		end
 	end)
 end
-coroutine.wrap(NIIOZL_fake_script)()
-local function QPWXCLL_fake_script() -- ScreenGui.Client 
+coroutine.wrap(TQKBL_fake_script)()
+local function DDDI_fake_script() -- ScreenGui.Client 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local UI = script.Parent
@@ -278,6 +308,7 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 	local CompletedText = Completed:WaitForChild('CompletedText')
 	
 	local MinusButton = Top:WaitForChild('-')
+	local XButton = Top:WaitForChild('X')
 	local Title = Top:WaitForChild('Title')
 	
 	local List = Bottom:WaitForChild('List')
@@ -304,6 +335,16 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 	
 					table.insert(ScriptTable, v)
 				end
+			end
+		end
+	end
+	
+	function Clear()
+		table.clear(ScriptTable)
+		
+		for i,v in pairs(Scripts:GetChildren()) do
+			if v:IsA('Frame') then
+				v:Destroy()
 			end
 		end
 	end
@@ -368,6 +409,19 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 			end
 		end)
 		
+		XButton.MouseButton1Click:Connect(function()
+			if Loaded then
+				if OpenDebounce then return end
+				OpenDebounce = true
+				List.Visible = false
+				Scripts.Visible = false
+				TweenService:Create(Bottom, TweenInfo.new(0.5), {Size = UDim2.new(0, 235,0, 0)}):Play()
+				task.delay(0.5,function()
+					UI:Destroy()
+				end)
+			end
+		end)
+		
 		List.SearchLP.MouseButton1Click:Connect(function()
 			Search(game.Players.LocalPlayer)
 		end)
@@ -378,6 +432,10 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 		
 		List.SearchGM.MouseButton1Click:Connect(function()
 			Search(game)
+		end)
+		
+		List.Clear.MouseButton1Click:Connect(function()
+			Clear()
 		end)
 		
 		List.Decompile.MouseButton1Click:Connect(function()
@@ -395,4 +453,4 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 		end)
 	end)
 end
-coroutine.wrap(QPWXCLL_fake_script)()
+coroutine.wrap(DDDI_fake_script)()
