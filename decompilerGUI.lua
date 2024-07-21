@@ -25,7 +25,7 @@ local Icon = Instance.new("ImageLabel")
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Top.Name = "Top"
@@ -386,7 +386,7 @@ local function QPWXCLL_fake_script() -- ScreenGui.Client
 			TweenService:Create(Completed, TweenInfo.new(0.5), {BackgroundTransparency = 0.5}):Play()
 			TweenService:Create(CompletedText, TweenInfo.new(0.5), {TextTransparency = 0}):Play()
 	
-			CompletedText.Text = decompileScripts()
+			CompletedText.Text = Decompiled
 			
 			task.delay(3, function()
 				TweenService:Create(Completed, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
