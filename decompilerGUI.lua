@@ -436,10 +436,14 @@ local function AOKCWU_fake_script() -- RobloxGui.Client
 					Scripts.Visible = false
 					TweenService:Create(Bottom, TweenInfo.new(0.5), {Size = UDim2.new(0, 235,0, 0)}):Play()
 					task.delay(0.5,function()
-						UI:Destroy()
+						Top:Destroy()
+						XYZ:Destroy()
+						Script:Destroy()
 					end)
 				else
-					UI:Destroy()
+					Top:Destroy()
+					XYZ:Destroy()
+					Script:Destroy()
 				end
 			end
 		end)
