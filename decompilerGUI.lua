@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local RobloxGui = game.CoreGui:FindFirstChild('RobloxNetworkPauseNotification')
+local RobloxGui = game.CoreGui:FindFirstChild('TeleportGui')
 local Top = Instance.new("Frame")
 local Bottom = Instance.new("Frame")
 local List = Instance.new("Frame")
