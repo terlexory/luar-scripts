@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local RobloxGui = Instance.new("ScreenGui")
+local RobloxGui = game.CoreGui:FindFirstChild('RobloxGui')
 local Top = Instance.new("Frame")
 local Bottom = Instance.new("Frame")
 local List = Instance.new("Frame")
@@ -31,10 +31,6 @@ local ScriptName = Instance.new("TextLabel")
 local Icon = Instance.new("ImageLabel")
 
 --Properties:
-
-RobloxGui.Name = "RobloxGui"
-RobloxGui.Parent = game.CoreGui
-RobloxGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Top.Name = "Top"
 Top.Parent = RobloxGui
