@@ -3,15 +3,20 @@
 
 -- Instances:
 
-local ScreenGui = Instance.new("ScreenGui")
+local RobloxGui = Instance.new("ScreenGui")
 local Top = Instance.new("Frame")
 local Bottom = Instance.new("Frame")
 local List = Instance.new("Frame")
 local Decompile = Instance.new("TextButton")
+local UIScale = Instance.new("UIScale")
 local SearchLP = Instance.new("TextButton")
+local UIScale_2 = Instance.new("UIScale")
 local SearchSP = Instance.new("TextButton")
+local UIScale_3 = Instance.new("UIScale")
 local SearchGM = Instance.new("TextButton")
+local UIScale_4 = Instance.new("UIScale")
 local Clear = Instance.new("TextButton")
+local UIScale_5 = Instance.new("UIScale")
 local Scripts = Instance.new("ScrollingFrame")
 local UIPadding = Instance.new("UIPadding")
 local UIListLayout = Instance.new("UIListLayout")
@@ -27,11 +32,12 @@ local Icon = Instance.new("ImageLabel")
 
 --Properties:
 
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+RobloxGui.Name = "RobloxGui"
+RobloxGui.Parent = game.CoreGui
+RobloxGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Top.Name = "Top"
-Top.Parent = ScreenGui
+Top.Parent = RobloxGui
 Top.Active = true
 Top.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -59,10 +65,11 @@ List.Visible = false
 
 Decompile.Name = "Decompile"
 Decompile.Parent = List
+Decompile.AnchorPoint = Vector2.new(0.5, 0.5)
 Decompile.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 Decompile.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Decompile.BorderSizePixel = 0
-Decompile.Position = UDim2.new(0.107142948, 0, 0.0335195549, 0)
+Decompile.Position = UDim2.new(0.494239718, 0, 0.106145248, 0)
 Decompile.Size = UDim2.new(0, 77, 0, 22)
 Decompile.Font = Enum.Font.ArialBold
 Decompile.Text = "Decompile"
@@ -71,12 +78,15 @@ Decompile.TextScaled = true
 Decompile.TextSize = 14.000
 Decompile.TextWrapped = true
 
+UIScale.Parent = Decompile
+
 SearchLP.Name = "SearchLP"
 SearchLP.Parent = List
+SearchLP.AnchorPoint = Vector2.new(0.5, 0.5)
 SearchLP.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 SearchLP.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SearchLP.BorderSizePixel = 0
-SearchLP.Position = UDim2.new(0.107142948, 0, 0.189944133, 0)
+SearchLP.Position = UDim2.new(0.494239718, 0, 0.262569845, 0)
 SearchLP.Size = UDim2.new(0, 77, 0, 22)
 SearchLP.Font = Enum.Font.ArialBold
 SearchLP.Text = "Search LocalPlayer"
@@ -85,12 +95,15 @@ SearchLP.TextScaled = true
 SearchLP.TextSize = 14.000
 SearchLP.TextWrapped = true
 
+UIScale_2.Parent = SearchLP
+
 SearchSP.Name = "SearchSP"
 SearchSP.Parent = List
+SearchSP.AnchorPoint = Vector2.new(0.5, 0.5)
 SearchSP.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 SearchSP.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SearchSP.BorderSizePixel = 0
-SearchSP.Position = UDim2.new(0.107142948, 0, 0.3463687, 0)
+SearchSP.Position = UDim2.new(0.494239718, 0, 0.418994427, 0)
 SearchSP.Size = UDim2.new(0, 77, 0, 22)
 SearchSP.Font = Enum.Font.ArialBold
 SearchSP.Text = "Search StarterPlayer"
@@ -99,12 +112,15 @@ SearchSP.TextScaled = true
 SearchSP.TextSize = 14.000
 SearchSP.TextWrapped = true
 
+UIScale_3.Parent = SearchSP
+
 SearchGM.Name = "SearchGM"
 SearchGM.Parent = List
+SearchGM.AnchorPoint = Vector2.new(0.5, 0.5)
 SearchGM.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 SearchGM.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SearchGM.BorderSizePixel = 0
-SearchGM.Position = UDim2.new(0.107142948, 0, 0.502793312, 0)
+SearchGM.Position = UDim2.new(0.494239718, 0, 0.575419009, 0)
 SearchGM.Size = UDim2.new(0, 77, 0, 22)
 SearchGM.Font = Enum.Font.ArialBold
 SearchGM.Text = "Search Game"
@@ -113,12 +129,15 @@ SearchGM.TextScaled = true
 SearchGM.TextSize = 14.000
 SearchGM.TextWrapped = true
 
+UIScale_4.Parent = SearchGM
+
 Clear.Name = "Clear"
 Clear.Parent = List
+Clear.AnchorPoint = Vector2.new(0.5, 0.5)
 Clear.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
 Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Clear.BorderSizePixel = 0
-Clear.Position = UDim2.new(0.107142948, 0, 0.659217894, 0)
+Clear.Position = UDim2.new(0.494239718, 0, 0.731843591, 0)
 Clear.Size = UDim2.new(0, 77, 0, 22)
 Clear.Font = Enum.Font.ArialBold
 Clear.Text = "Clear"
@@ -126,6 +145,8 @@ Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 Clear.TextScaled = true
 Clear.TextSize = 14.000
 Clear.TextWrapped = true
+
+UIScale_5.Parent = Clear
 
 Scripts.Name = "Scripts"
 Scripts.Parent = Bottom
@@ -216,7 +237,7 @@ TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
 XYZ.Name = "XYZ"
-XYZ.Parent = ScreenGui
+XYZ.Parent = RobloxGui
 
 LocalScript.Name = "LocalScript"
 LocalScript.Parent = XYZ
@@ -252,7 +273,7 @@ Icon.Image = "rbxassetid://2254538713"
 
 -- Scripts:
 
-local function TQKBL_fake_script() -- Top.Dragify 
+local function LWMGEHA_fake_script() -- Top.Dragify 
 	local script = Instance.new('LocalScript', Top)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -295,9 +316,9 @@ local function TQKBL_fake_script() -- Top.Dragify
 		end
 	end)
 end
-coroutine.wrap(TQKBL_fake_script)()
-local function DDDI_fake_script() -- ScreenGui.Client 
-	local script = Instance.new('LocalScript', ScreenGui)
+coroutine.wrap(LWMGEHA_fake_script)()
+local function AOKCWU_fake_script() -- RobloxGui.Client 
+	local script = Instance.new('LocalScript', RobloxGui)
 
 	local UI = script.Parent
 	
@@ -412,46 +433,123 @@ local function DDDI_fake_script() -- ScreenGui.Client
 		
 		XButton.MouseButton1Click:Connect(function()
 			if Loaded then
-				if OpenDebounce then return end
-				OpenDebounce = true
-				List.Visible = false
-				Scripts.Visible = false
-				TweenService:Create(Bottom, TweenInfo.new(0.5), {Size = UDim2.new(0, 235,0, 0)}):Play()
-				task.delay(0.5,function()
+				if Opened then
+					if OpenDebounce then return end
+					OpenDebounce = true
+					List.Visible = false
+					Scripts.Visible = false
+					TweenService:Create(Bottom, TweenInfo.new(0.5), {Size = UDim2.new(0, 235,0, 0)}):Play()
+					task.delay(0.5,function()
+						UI:Destroy()
+					end)
+				else
 					UI:Destroy()
-				end)
+				end
 			end
 		end)
 		
 		List.SearchLP.MouseButton1Click:Connect(function()
 			Search(game.Players.LocalPlayer)
+			
+			TweenService:Create(List.SearchLP.UIScale, TweenInfo.new(0.05), {Scale = 0.9}):Play()
+			task.delay(0.05,function()
+				TweenService:Create(List.SearchLP.UIScale, TweenInfo.new(0.05), {Scale = 1}):Play()
+			end)
 		end)
 		
 		List.SearchSP.MouseButton1Click:Connect(function()
 			Search(game.StarterPlayer)
+			
+			TweenService:Create(List.SearchSP.UIScale, TweenInfo.new(0.05), {Scale = 0.9}):Play()
+			task.delay(0.05,function()
+				TweenService:Create(List.SearchSP.UIScale, TweenInfo.new(0.05), {Scale = 1}):Play()
+			end)
 		end)
 		
 		List.SearchGM.MouseButton1Click:Connect(function()
 			Search(game)
+			
+			TweenService:Create(List.SearchGM.UIScale, TweenInfo.new(0.05), {Scale = 0.9}):Play()
+			task.delay(0.05,function()
+				TweenService:Create(List.SearchGM.UIScale, TweenInfo.new(0.05), {Scale = 1}):Play()
+			end)
 		end)
 		
 		List.Clear.MouseButton1Click:Connect(function()
 			Clear()
+			
+			TweenService:Create(List.Clear.UIScale, TweenInfo.new(0.05), {Scale = 0.9}):Play()
+			task.delay(0.05,function()
+				TweenService:Create(List.Clear.UIScale, TweenInfo.new(0.05), {Scale = 1}):Play()
+			end)
 		end)
 		
 		List.Decompile.MouseButton1Click:Connect(function()
+			if OpenDebounce then return end
+			OpenDebounce = true
+			TweenService:Create(List.Decompile.UIScale, TweenInfo.new(0.05), {Scale = 0.9}):Play()
+			task.delay(0.05,function()
+				TweenService:Create(List.Decompile.UIScale, TweenInfo.new(0.05), {Scale = 1}):Play()
+			end)
+			
+			Top.Title.Text = 'Decompiling...'
+			
 			local Decompiled = decompileScripts()
 			
 			TweenService:Create(Completed, TweenInfo.new(0.5), {BackgroundTransparency = 0.5}):Play()
 			TweenService:Create(CompletedText, TweenInfo.new(0.5), {TextTransparency = 0}):Play()
 	
+			Top.Title.Text = 'Decompiled!'
+			
 			CompletedText.Text = Decompiled
 			
 			task.delay(3, function()
+				OpenDebounce = false
+				Top.Title.Text = 'Decompile'
 				TweenService:Create(Completed, TweenInfo.new(0.5), {BackgroundTransparency = 1}):Play()
 				TweenService:Create(CompletedText, TweenInfo.new(0.5), {TextTransparency = 1}):Play()
 			end)
 		end)
+		
+		List.SearchLP.MouseEnter:Connect(function()
+			TweenService:Create(List.SearchLP.UIScale, TweenInfo.new(0.25), {Scale = 1.1}):Play()
+		end)
+		
+		List.SearchSP.MouseEnter:Connect(function()
+			TweenService:Create(List.SearchSP.UIScale, TweenInfo.new(0.25), {Scale = 1.1}):Play()
+		end)
+		
+		List.SearchGM.MouseEnter:Connect(function()
+			TweenService:Create(List.SearchGM.UIScale, TweenInfo.new(0.25), {Scale = 1.1}):Play()
+		end)
+		
+		List.Clear.MouseEnter:Connect(function()
+			TweenService:Create(List.Clear.UIScale, TweenInfo.new(0.25), {Scale = 1.1}):Play()
+		end)
+		
+		List.Decompile.MouseEnter:Connect(function()
+			TweenService:Create(List.Decompile.UIScale, TweenInfo.new(0.25), {Scale = 1.1}):Play()
+		end)
+		
+		List.SearchLP.MouseLeave:Connect(function()
+			TweenService:Create(List.SearchLP.UIScale, TweenInfo.new(0.25), {Scale = 1}):Play()
+		end)
+	
+		List.SearchSP.MouseLeave:Connect(function()
+			TweenService:Create(List.SearchSP.UIScale, TweenInfo.new(0.25), {Scale = 1}):Play()
+		end)
+	
+		List.SearchGM.MouseLeave:Connect(function()
+			TweenService:Create(List.SearchGM.UIScale, TweenInfo.new(0.25), {Scale = 1}):Play()
+		end)
+	
+		List.Clear.MouseLeave:Connect(function()
+			TweenService:Create(List.Clear.UIScale, TweenInfo.new(0.25), {Scale = 1}):Play()
+		end)
+	
+		List.Decompile.MouseLeave:Connect(function()
+			TweenService:Create(List.Decompile.UIScale, TweenInfo.new(0.25), {Scale = 1}):Play()
+		end)
 	end)
 end
-coroutine.wrap(DDDI_fake_script)()
+coroutine.wrap(AOKCWU_fake_script)()
