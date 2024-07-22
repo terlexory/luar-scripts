@@ -135,6 +135,7 @@ Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Scripts.BorderSizePixel = 0
 Scripts.Size = UDim2.new(0, 142, 0, 179)
 Scripts.Visible = false
+Scripts.AutomaticSize = Enum.AutomaticSize.Y
 Scripts.ScrollBarThickness = 6
 
 UIPadding.Parent = Scripts
