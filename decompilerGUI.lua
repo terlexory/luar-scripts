@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local RobloxGui = game.CoreGui:FindFirstChild('TeleportGui')
+local RobloxGui = game.CoreGui:FindFirstChild('RobloxGui')
 local Top = Instance.new("Frame")
 local Bottom = Instance.new("Frame")
 local List = Instance.new("Frame")
