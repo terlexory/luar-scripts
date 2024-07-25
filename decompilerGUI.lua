@@ -376,7 +376,7 @@ local function AOKCWU_fake_script() -- RobloxGui.Client
 		for i,v in pairs(ScriptTable) do
 			if v:IsA('LocalScript') then
 				local success,response = pcall(function ()
-					writefile('DecompiledScripts_' .. game.PlaceId .. '/' .. v.Name .. '.lua', 'Decompiled using: ' .. identifyexecutor() .. '\n' .. decompile(v))
+					writefile('DecompiledScripts_' .. game.PlaceId .. '/' .. v.Name .. '.lua', '-- Decompiled using: ' .. identifyexecutor() .. '\n\n' .. decompile(v))
 				end)
 	
 				if success then
